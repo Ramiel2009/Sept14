@@ -3,7 +3,7 @@ package ua.my.homework;
 	// sum - total sum	
 	// If sum = 0 - 300, then discount = 0%. 300 - 500 = 3%. 500-800 = 5%, 800+ = 10%;
 	// Your discount is 5%. Total to pay: sum - discount %.
-	// two ways to solve - if / else statement and switch / case statements;
+	// two ways to solve - if/else statement and switch/case statement;
 
 public class HomeWork1_1 {
 
