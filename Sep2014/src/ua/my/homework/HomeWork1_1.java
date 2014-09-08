@@ -1,9 +1,9 @@
 package ua.my.homework;
 
-//3. Данно sum - сумма покупок в магазине.	
-	// Известно, что если сумма покупки от 0 до 300, то скидка = 0. От 300 до 500 = 3%. 500-800 = 5%, 800+ = 10%;
-	// Ваша скидка 5%. И того к оплате: сумма минус %.
-	// реализация 2 способами - через if / else, или switch / case (типы данных);
+	// sum - total sum	
+	// If sum = 0 - 300, then discount = 0%. 300 - 500 = 3%. 500-800 = 5%, 800+ = 10%;
+	// Your discount is 5%. Total to pay: sum - discount %.
+	// two ways to solve - if / else statement and switch / case statements;
 
 public class HomeWork1_1 {
 
@@ -11,7 +11,7 @@ public class HomeWork1_1 {
 int sum = 900;
 int id = sum/100;
 if (sum<=0){
-	System.out.println("Введенное число должно быть больше нуля! Введите другое значение!");
+	System.out.println("Entered sum must be bigger then 0! Please enter another sum");
 }
 else
 switch (id) {
