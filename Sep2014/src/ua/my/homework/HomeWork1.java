@@ -9,7 +9,7 @@ public class HomeWork1 {
 	public static void main(String [] args){
 		
 
-	int sum = 100;	//введите сумму
+	double sum = 100;	//введите сумму
 	
 	if (sum <= 0) { 
 		System.out.println("—умма не может быть нулем или меньше. ¬ведите другое значение!");
