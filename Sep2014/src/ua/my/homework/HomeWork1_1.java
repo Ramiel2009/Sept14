@@ -8,12 +8,16 @@ package ua.my.homework;
 public class HomeWork1_1 {
 
 	public static void main(String[] args) {
-int sum = 1000;
+int sum = 900;
 int id = sum/100;
+if (sum<=0){
+	System.out.println("¬веденное число должно быть больше нул€! ¬ведите другое значение!");
+}
+else
 switch (id) {
 	case  0:
 		System.out.println("Sum = "+sum+". Discount = 0%. Total = "+sum);
-break;
+		break;
 	case  1:
 		System.out.println("Sum = "+sum+". Discount = 0%. Total = "+sum);
 		break;
