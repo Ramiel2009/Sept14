@@ -1,50 +1,38 @@
 package ua.my.homework;
 
-// sum - total sum	
-// If sum = 0 - 300, then discount = 0%. 300 - 500 = 3%. 500-800 = 5%, 800+ = 10%;
-// Your discount is 5%. Total to pay: sum - discount %.
-// two ways to solve - if/else statement and switch/case statement;
+//3. Данно sum - сумма покупок в магазине.	
+	// Известно, что если сумма покупки от 0 до 300, то скидка = 0. От 300 до 500 = 3%. 500-800 = 5%, 800+ = 10%;
+	// Ваша скидка 5%. И того к оплате: сумма минус %.
+	// реализация 2 способами - через if / else, или switch / case (типы данных)
 
 public class HomeWork1_1 {
+	public static void main(String [] args){
+		
 
-	public static void main(String[] args) {
-		int sum = -10004;
-		int id = sum / 100;
-		if (sum <= 0) {
-			System.out
-					.println("Entered sum must be bigger then 0! Please enter another sum");
-		} else
-			switch (id) {
-			case 0:
-				System.out.println("Sum = " + sum + ". Discount = 0%. Total = "	+ sum);
-				break;
-			case 1:
-				System.out.println("Sum = " + sum + ". Discount = 0%. Total = "	+ sum);
-				break;
-			case 2:
-				System.out.println("Sum = " + sum + ". Discount = 0%. Total = "	+ sum);
-				break;
-			case 3:
-				System.out.println("Sum = " + sum + ". Discount = 3%. Total = "	+ sum + "-3% = " + (sum - (sum / 100 * 3)));
-				break;
-			case 4:
-				System.out.println("Sum = " + sum + ". Discount = 3%. Total = "	+ sum + "-3% = " + (sum - (sum / 100 * 3)));
-				break;
-			case 5:
-				System.out.println("Sum = " + sum + ". Discount = 5%. Total = "	+ sum + "-5% = " + (sum - (sum / 100 * 5)));
-				break;
-			case 6:
-				System.out.println("Sum = " + sum + ". Discount = 5%. Total = "	+ sum + "-5% = " + (sum - (sum / 100 * 5)));
-				break;
-			case 7:
-				System.out.println("Sum = " + sum + ". Discount = 5%. Total = "	+ sum + "-5% = " + (sum - (sum / 100 * 5)));
-				break;
-			default:
-				System.out.println("Sum = " + sum
-						+ ". Discount = 10%. Total = " + sum + "-10% = "
-						+ (sum - (sum / 100 * 10)));
-				break;
-
+	double sum = 100;	//введите сумму
+	
+	if (sum <= 0) { 
+		System.out.println("Сумма не может быть нулем или меньше. Введите другое значение!");
+	}
+	else {
+	if (sum > 0 && sum <=300){
+		System.out.println ("Ваша скидка 0%. И того к оплате:"+sum+"-"+"0% = "+ sum);
+	}
+		else {
+			if (sum > 300 && sum <= 500){
+				System.out.println ("Ваша скидка 3%. И того к оплате:"+sum+"-"+"3% = "+ (sum -((sum/100)*3)));
 			}
+				else {
+					if (sum > 500 && sum <= 800){
+						System.out.println ("Ваша скидка 5%. И того к оплате:"+sum+"-"+"5% = "+ (sum -((sum/100)*5)));
+				}
+					else {
+						if (sum > 800){
+							System.out.println ("Ваша скидка 10%. И того к оплате:"+sum+"-"+"10% = "+ (sum -((sum/100)*10)));
+								}			
+							}
+					}
+				}
+		}
 	}
 }
