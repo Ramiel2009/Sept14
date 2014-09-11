@@ -10,6 +10,8 @@ public class HomeWork2_4 {
 		boolean check = true;
 		while (check == true) {
 			
+			//TODO решение для не целых чисел
+			
 			Scanner in = new Scanner(System.in);
 			int n;
 			System.out.println("Enter the number");
