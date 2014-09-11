@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public class HomeWork2_5 {
 
-	// вводится латинская буква - гласная она
-	// или согласная
+	// вводится латинская буква - гласная она или согласная
 
 	public static void main(String[] args) {
 		String a[] = { "a", "e", "i", "o", "u" };
+		// String z[] = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n",
+		// "p", "q", "r", "s", "t", "v", "w", "x", "z" };
 
 		System.out.println(Arrays.toString(a));
 		String c;
@@ -20,6 +21,7 @@ public class HomeWork2_5 {
 		while (flag == true) {
 			Scanner in = new Scanner(System.in);
 			c = in.nextLine();
+
 			for (int i = 0; i < a.length; i++) {
 				if (c.equals(a[i])) {
 					System.out.println("гласная");
@@ -27,10 +29,9 @@ public class HomeWork2_5 {
 				}
 				else
 					System.out.println("согласная");
-					flag = false;
-					i=a.length;
+				flag = false;
+				i = a.length;
 			}
-			
 		}
 	}
 }

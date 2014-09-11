@@ -10,7 +10,7 @@ public class HomeWork2_4 {
 		boolean check = true;
 		while (check == true) {
 			
-			//TODO решение для не целых чисел
+
 			
 			Scanner in = new Scanner(System.in);
 			int n;
@@ -25,7 +25,7 @@ public class HomeWork2_4 {
 				System.out.println("не четное!");
 			check=false;}
 			else
-			System.out.println("Введено не целое число, введите число типа int!");	
+			System.out.println("Введено не четное число, try again, dude!");	
 		}
 	}
 }
