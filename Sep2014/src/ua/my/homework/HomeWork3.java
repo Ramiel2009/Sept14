@@ -118,8 +118,8 @@ public class HomeWork3 {
 				}
 				// //////////////////////////////////////////////Using
 				// HealthPack/////////////////////////////////////////////////
-				if (forward.equals("1") && hpPicked == true) { // 20HP used
-					if (repairLevel == 1) {
+				if (forward.equals("1") && hpPicked == true &&repairLevel == 1) { // 20HP used
+					
 						hp = 20;
 						health = health + hp;
 						game[0] = '~';
@@ -142,8 +142,9 @@ public class HomeWork3 {
 						hpPicked = false;
 					}
 
-					else if (repairLevel == 2 && hpPicked == true) { // 40HP
-																		// used
+					else if (forward.equals("2") && repairLevel == 2
+							&& hpPicked == true) { // 40HP
+						// used
 						hp = 40;
 						health = health + hp;
 						game[0] = '~';
@@ -165,14 +166,13 @@ public class HomeWork3 {
 								+ repairLevel + "|");
 						repairLevel = 0;
 						hpPicked = false;
-					} else if (repairLevel == 0) {
+					} 
+					}else if (repairLevel == 0) {
 						System.out.println("You don't have a Repair Kit");
-					}
 				}
 
-			}
-		} while (i < game.length - 1);
+			}while (i < game.length - 1);
 		System.out.println("Game Over, Captain!");
+		} 
 
 	}
-}
