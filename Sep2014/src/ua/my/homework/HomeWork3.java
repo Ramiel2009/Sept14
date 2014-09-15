@@ -61,16 +61,7 @@ public class HomeWork3 {
 					i++;
 
 					if (i != (int) hpTurn) { // if your don't picking the health pack on this turn
-						game[0] = '~';
-						game[1] = '~';
-						game[2] = '~';
-						game[3] = '~';
-						game[4] = '~';
-						game[5] = '~';
-						game[6] = '~';
-						game[7] = '~';
-						game[8] = '~';
-						game[9] = '~';
+						Arrays.fill(game, '~');
 						game[(int) hpTurn] = '\u2612';
 						if (picked == true) {
 							game[(int) hpTurn] = '~';
@@ -85,16 +76,7 @@ public class HomeWork3 {
 					}
 
 					else if (i == (int) hpTurn) { // If you picking the health pack on this turn
-						game[0] = '~';
-						game[1] = '~';
-						game[2] = '~';
-						game[3] = '~';
-						game[4] = '~';
-						game[5] = '~';
-						game[6] = '~';
-						game[7] = '~';
-						game[8] = '~';
-						game[9] = '~';
+						Arrays.fill(game, '~');
 						repairLevel = hp;
 						picked = true;
 						if (picked == true) {				//если аптечка поднята, заменяем в массиве + на ~
@@ -107,7 +89,7 @@ public class HomeWork3 {
 								+ "\n | HP = " + health + "|| Repair level: "
 								+ repairLevel + "|\n");
 						System.out.println("\n You found a treasure chest! There is some repair toolkits inside!\n" +
-											"Use it to restore your HP!\n");
+											"Use its to restore your HP!\n");
 						hpPicked = true;
 					}
 					
@@ -115,20 +97,11 @@ public class HomeWork3 {
 				///////////////////////////////////Back////////////////////////////
 				} else if (forward.equals("a") || forward.equals("A")) {
 					if ((forward.equals("a") || forward.equals("A")) && i == 0) {
-						System.out.println("Don't sail away!");
+						System.out.println("Don't be a sea rat! Go ahead");
 						i++;
 					}
 					i--;
-					game[0] = '~';
-					game[1] = '~';
-					game[2] = '~';
-					game[3] = '~';
-					game[4] = '~';
-					game[5] = '~';
-					game[6] = '~';
-					game[7] = '~';
-					game[8] = '~';
-					game[9] = '~';
+					Arrays.fill(game, '~');
 					game[(int) hpTurn] = '+';
 					if (picked == true) {
 						game[(int) hpTurn] = '~';
@@ -145,16 +118,7 @@ public class HomeWork3 {
 				if (forward.equals("1") && hpPicked == true && repairLevel == 1) { // 20HP used
 					hp = 20;
 					health = health + hp;
-					game[0] = '~';
-					game[1] = '~';
-					game[2] = '~';
-					game[3] = '~';
-					game[4] = '~';
-					game[5] = '~';
-					game[6] = '~';
-					game[7] = '~';
-					game[8] = '~';
-					game[9] = '~';
+					Arrays.fill(game, '~');
 					game[(int) hpTurn] = '+';
 					game[i] = '\u26F5';
 					repairLevel = 0;
@@ -173,16 +137,7 @@ public class HomeWork3 {
 				if (forward.equals("2") && repairLevel == 2 && hpPicked == true) { // 40HP used
 					hp = 40;
 					health = health + hp;
-					game[0] = '~';
-					game[1] = '~';
-					game[2] = '~';
-					game[3] = '~';
-					game[4] = '~';
-					game[5] = '~';
-					game[6] = '~';
-					game[7] = '~';
-					game[8] = '~';
-					game[9] = '~';
+					Arrays.fill(game, '~');
 					repairLevel = 0;
 					game[i] = '\u26F5';
 					
@@ -190,7 +145,7 @@ public class HomeWork3 {
 							+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 							+ "\n | HP = " + health + "|| Repair level: "
 							+ repairLevel + "|\n");
-					System.out.println("sing small Repair Toolkit! HP level increased! HP+" +hp);
+					System.out.println("using small Repair Toolkit! HP level increased! HP+" +hp);
 					game[(int) hpTurn] = '+';
 					hp = 0;
 					hpPicked = false;
@@ -201,6 +156,5 @@ public class HomeWork3 {
 			}
 		} while (i < game.length - 1);
 		System.out.println("Game Over, Captain!");
-		
 	}
 }
