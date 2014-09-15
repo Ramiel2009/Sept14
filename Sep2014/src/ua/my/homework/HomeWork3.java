@@ -26,14 +26,14 @@ public class HomeWork3 {
 			hp = 1;						//Выбор размера аптечки
 		} else							//
 			hp = 2;						//
-		double hpTurn = 1 + Math.random() * 9; // Шаг на котором выпадает
+		double hpTurn = 1 + Math.random() * 8; // Шаг на котором выпадает
 												// аптечка
 
 		// Стартовое поле
 		char game[] = { '\u26F5', '~', '~', '~', '~', '~', '~', '~', '~', '~' };
 		System.out.println("------------------------------- \n" + " ☀" + ""
 				+ "\n\n" + Arrays.toString(game) + "\n | HP = " + health
-				+ "|| Repair level: " + repairLevel + "|");
+				+ "|| Repair level: " + repairLevel + "|\n");
 		boolean hpPicked = false;
 		boolean picked = false;
 
@@ -43,7 +43,7 @@ public class HomeWork3 {
 										// дальше
 				Scanner in1 = new Scanner(System.in);
 				String forward;
-
+				System.out.println(" Yo-ho-ho, and a bottle of rum! Your turn, Captain!:");
 				forward = in1.nextLine();
 
 				if ((forward.equals("1") && hpPicked == false)					//Проверка возможности использования аптечки
@@ -60,8 +60,7 @@ public class HomeWork3 {
 
 					i++;
 
-					if (i != (int) hpTurn) { // if your don't picking the health
-												// pack on this turn
+					if (i != (int) hpTurn) { // if your don't picking the health pack on this turn
 						game[0] = '~';
 						game[1] = '~';
 						game[2] = '~';
@@ -72,7 +71,7 @@ public class HomeWork3 {
 						game[7] = '~';
 						game[8] = '~';
 						game[9] = '~';
-						game[(int) hpTurn] = '+';
+						game[(int) hpTurn] = '\u2612';
 						if (picked == true) {
 							game[(int) hpTurn] = '~';
 						}
@@ -81,7 +80,7 @@ public class HomeWork3 {
 						System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
 								+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 								+ "\n | HP = " + health + "|| Repair level: "
-								+ repairLevel + "|");
+								+ repairLevel + "|\n");
 
 					}
 
@@ -101,12 +100,14 @@ public class HomeWork3 {
 						if (picked == true) {				//если аптечка поднята, заменяем в массиве + на ~
 							game[(int) hpTurn] = '~';
 						}
-
+						
 						game[i] = '\u26F5';
 						System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
 								+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 								+ "\n | HP = " + health + "|| Repair level: "
-								+ repairLevel + "|");
+								+ repairLevel + "|\n");
+						System.out.println("\n You found a treasure chest! There is some repair toolkits inside!\n" +
+											"Use it to restore your HP!\n");
 						hpPicked = true;
 					}
 					
@@ -136,7 +137,7 @@ public class HomeWork3 {
 					System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
 							+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 							+ "\n | HP = " + health + "|| Repair level: "
-							+ repairLevel + "|");
+							+ repairLevel + "|\n");
 
 				}
 				// //////////////////////////////////////////////Using HealthPack/////////////////////////////////////////////////
@@ -157,16 +158,17 @@ public class HomeWork3 {
 					game[(int) hpTurn] = '+';
 					game[i] = '\u26F5';
 					repairLevel = 0;
-					System.out.println("\n\n\n\n\n\n\n"+"HP level increased! HP+" +hp);
-					System.out.println("------------------------------- \n"
+					
+					System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
 							+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 							+ "\n | HP = " + health + "|| Repair level: "
-							+ repairLevel + "|");
+							+ repairLevel + "|\n");
+					System.out.println("Using small Repair Toolkit! HP level increased! HP+" +hp);
 					hp = 0;
 					hpPicked = false;
 				}
-				else if (forward.equals("2")&&repairLevel == 1 && hpPicked==true){
-					System.out.println("To use small repair tool press '1' button!");
+				else if (forward.equals("2")&&repairLevel == 1 && hpPicked==true){			//Wrong repair tools used!
+					System.out.println("To use small Repair Toolkit press '1' button!");
 			}
 				if (forward.equals("2") && repairLevel == 2 && hpPicked == true) { // 40HP used
 					hp = 40;
@@ -183,21 +185,22 @@ public class HomeWork3 {
 					game[9] = '~';
 					repairLevel = 0;
 					game[i] = '\u26F5';
-					System.out.println("\n\n\n\n\n\n\n"+"HP level increased! HP+" +hp);
-					System.out.println("------------------------------- \n"
+					
+					System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
 							+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 							+ "\n | HP = " + health + "|| Repair level: "
-							+ repairLevel + "|");
+							+ repairLevel + "|\n");
+					System.out.println("sing small Repair Toolkit! HP level increased! HP+" +hp);
 					game[(int) hpTurn] = '+';
 					hp = 0;
 					hpPicked = false;
 				}
-				else if (forward.equals("1")&&repairLevel == 2 && hpPicked==true){
-						System.out.println("To use small repair tool press '1' button!");
-				}
-				
+				else if (forward.equals("1")&&repairLevel == 2 && hpPicked==true){			//Wrong repair tools used
+						System.out.println("To use small repair toolkit press '1' button!");
+				}		
 			}
 		} while (i < game.length - 1);
 		System.out.println("Game Over, Captain!");
+		
 	}
 }
