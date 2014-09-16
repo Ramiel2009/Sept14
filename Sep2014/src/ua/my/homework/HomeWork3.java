@@ -26,21 +26,17 @@ public class HomeWork3 {
 			hp = 1;						//Выбор размера аптечки
 		} else							//
 			hp = 2;						//
-		double hpTurn = 1 + Math.random() * 8; // Шаг на котором выпадает
-												// аптечка
-
+		double hpTurn = 1 + Math.random() * 8; // Шаг на котором выпадает аптечка
 		// Стартовое поле
 		char game[] = { '\u26F5', '~', '~', '~', '~', '~', '~', '~', '~', '~' };
+		game[(int) hpTurn] = '\u2612';
 		System.out.println("------------------------------- \n" + " ☀" + ""
 				+ "\n\n" + Arrays.toString(game) + "\n | HP = " + health
 				+ "|| Repair level: " + repairLevel + "|\n");
 		boolean hpPicked = false;
 		boolean picked = false;
-
 		do {
-
-			if (game[9] != '\u26F5') { // если корабль не на 10 позиции - играем
-										// дальше
+			if (game[9] != '\u26F5') { // если корабль не на 10 позиции - играем дальше
 				Scanner in1 = new Scanner(System.in);
 				String forward;
 				System.out.println(" Yo-ho-ho, and a bottle of rum! Your turn, Captain!:");
@@ -52,37 +48,29 @@ public class HomeWork3 {
 				}
 				if (hpPicked == true) {  		//если аптечка поднята, заменяем в массиве + на ~
 					game[i] = '~';
-				}
-				
-				////////////////////////////Forward////////////
-				
+				}				
+				//////////////////////////////Forward//////////////////////////////
 				if (forward.equals("d") || forward.equals("D")) { // If "D" key
-
 					i++;
-
-					if (i != (int) hpTurn) { // if your don't picking the health pack on this turn
+					if ((i != (int) hpTurn)|| ((i==(int)hpTurn)&& picked == true)) { // if your don't picking the health pack on this turn
 						Arrays.fill(game, '~');
 						game[(int) hpTurn] = '\u2612';
 						if (picked == true) {
 							game[(int) hpTurn] = '~';
 						}
-
 						game[i] = '\u26F5';
 						System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
 								+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 								+ "\n | HP = " + health + "|| Repair level: "
 								+ repairLevel + "|\n");
-
 					}
-
 					else if (i == (int) hpTurn) { // If you picking the health pack on this turn
 						Arrays.fill(game, '~');
 						repairLevel = hp;
 						picked = true;
 						if (picked == true) {				//если аптечка поднята, заменяем в массиве + на ~
 							game[(int) hpTurn] = '~';
-						}
-						
+						}		
 						game[i] = '\u26F5';
 						System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
 								+ " ☀" + "" + "\n\n" + Arrays.toString(game)
@@ -92,9 +80,7 @@ public class HomeWork3 {
 											"Use its to restore your HP!\n");
 						hpPicked = true;
 					}
-					
-					
-				///////////////////////////////////Back////////////////////////////
+					//////////////////////////////Back//////////////////////////////
 				} else if (forward.equals("a") || forward.equals("A")) {
 					if ((forward.equals("a") || forward.equals("A")) && i == 0) {
 						System.out.println("Don't be a sea rat! Go ahead");
@@ -111,10 +97,8 @@ public class HomeWork3 {
 							+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 							+ "\n | HP = " + health + "|| Repair level: "
 							+ repairLevel + "|\n");
-
 				}
-				// //////////////////////////////////////////////Using HealthPack/////////////////////////////////////////////////
-
+				//////////////////////////////Using HealthPack//////////////////////////////
 				if (forward.equals("1") && hpPicked == true && repairLevel == 1) { // 20HP used
 					hp = 20;
 					health = health + hp;
