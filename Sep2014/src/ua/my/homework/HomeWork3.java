@@ -129,10 +129,11 @@ public class HomeWork3 {
 							+ " ☀" + "" + "\n\n" + Arrays.toString(game)
 							+ "\n | HP = " + health + "|| Repair level: "
 							+ repairLevel + "|\n");
-					System.out.println("using small Repair Toolkit! HP level increased! HP+" +hp);
+					System.out.println("Using small Repair Toolkit! HP level increased! HP+" +hp);
 					game[(int) hpTurn] = '+';
 					hp = 0;
 					hpPicked = false;
+					
 				}
 				else if (forward.equals("1")&&repairLevel == 2 && hpPicked==true){			//Wrong repair tools used
 						System.out.println("To use small repair toolkit press '1' button!");

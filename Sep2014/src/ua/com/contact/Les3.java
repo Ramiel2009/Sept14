@@ -100,13 +100,9 @@ public class Les3 {
 		*/
 		
 		char [] b = {'e', 'd', 'd', 'd', 'd'}; 
-		for (int i = 0; i<b.length; i++){
-		boolean flag;
-		if (flag=true){
+		System.out.println(b.length);
 			
 		//	b[b.length -i -1];
 			
-		}
-		}
-	}			
+	}	
 }
