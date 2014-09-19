@@ -13,9 +13,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	TextView tv;
 	Button btn1;
-	Button btn2;
-	EditText et1;
-	
+		
 	char game[] = { '\u26F5', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' };
 	
 	@Override
@@ -24,7 +22,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		TextView tv = (TextView)findViewById(R.id.textView1);
-		EditText et1 = (EditText)findViewById(R.id.et1);
 		btn1 = (Button)findViewById(R.id.btn1);
 		btn1.setOnClickListener(this);
 
@@ -37,7 +34,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			switch (v.getId()){
 			case R.id.btn1:
-				tv.setText(game, 0, 5);
+				tv.setText("test");
 			}
 		}
 }
