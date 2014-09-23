@@ -1,15 +1,36 @@
 package ua.mm.boat_oop;
 
+import java.util.Scanner;
+
 public class GameMain {
+	int hpTurn;
+	int hpSize;
+
 
 	public static void main(String[] args) {
 
-		Boat boatik = new Boat();
+		/*HealthPack hPack = new HealthPack();
+		hPack.hpTurn=(int) (1 + Math.random() * 8);
+		
+		
+		hPack.setHPTurn();
+		System.out.println(hPack.hpTurn);
+		
+		
+		hPack.setHPSize();
+		if (hPack.setHPSize()==1){
+			System.out.println("1!");
+		}
+		else 
+			System.out.println("2!");
+		}
+		*/
 
-		boatik.setGo(10, 7);// int HP on start, int start position
-		System.out.println(boatik.i);
+		
+		Boat boatik = new Boat();
+		boatik.setGo(10, 0);		
 		if (boatik.i == 0) {
-			boatik.setGameOver("");
+			boatik.setGameOver("FINISH");
 		}
 	}
 }

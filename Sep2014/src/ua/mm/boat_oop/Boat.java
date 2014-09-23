@@ -15,7 +15,106 @@ public class Boat {
 	int health;
 	char game[];
 
+	public void setBoat(){
+		
+	}
 	
+	
+	public int setMoving(){
+		Scanner in1 = new Scanner(System.in);
+		String forward;
+		forward = in1.nextLine();
+		
+		if (forward.equals("d") || forward.equals("D")){
+			return setGoForward();
+
+		}
+		else if (forward.equals("a") || forward.equals("A")){
+			return setGoBack();
+		}
+		else return setGo(10, 1);
+	}
+	
+	public int setGoForward (){
+		
+		 // If "D" key
+			i++;
+			if ((i != (int) hpTurn)|| ((i==(int)hpTurn)&& picked == true)) { // if your don't picking the health pack on this turn
+				Arrays.fill(game, '~');
+				game[(int) hpTurn] = '\u2612';
+				if (picked == true) {
+					game[(int) hpTurn] = '~';
+				}
+				game[i] = '\u26F5';
+				System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
+						+ " ☀" + "" + "\n\n" + Arrays.toString(game)
+						+ "\n | HP = " + health + "|| Repair level: "
+						+ repairLevel + "|\n");
+			}
+			else if (i == (int) hpTurn) { // If you picking the health pack on this turn
+				Arrays.fill(game, '~');
+				repairLevel = hp;
+				picked = true;
+								//если аптечка поднята, заменяем в массиве + на ~
+					game[(int) hpTurn] = '~';
+				}		
+				game[i] = '\u26F5';
+				System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
+						+ " ☀" + "" + "\n\n" + Arrays.toString(game)
+						+ "\n | HP = " + health + "|| Repair level: "
+						+ repairLevel + "|\n");
+				System.out.println("\n You found a treasure chest! There is some repair toolkits inside!\n" +
+									"Use its to restore your HP!\n");
+				hpPicked = true;
+				
+				
+		
+		i++;
+		return i;
+	}
+	
+	
+	public int setGoBack (){
+		
+		if (i == 0) {
+			System.out.println("Don't be a sea rat! Go ahead");
+			i++;
+		}
+		i--;
+		if ((i != (int) hpTurn)|| ((i==(int)hpTurn)&& picked == true)) { // if your don't picking the health pack on this turn
+			Arrays.fill(game, '~');
+			game[(int) hpTurn] = '\u2612';
+			if (picked == true) {
+				game[(int) hpTurn] = '~';
+			}
+			game[i] = '\u26F5';
+			System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
+					+ " ☀" + "" + "\n\n" + Arrays.toString(game)
+					+ "\n | HP = " + health + "|| Repair level: "
+					+ repairLevel + "|\n");
+		}
+		else if (i == (int) hpTurn) { // If you picking the health pack on this turn
+			Arrays.fill(game, '~');
+			repairLevel = hp;
+			picked = true;
+			if (picked == true) {				//если аптечка поднята, заменяем в массиве + на ~
+				game[(int) hpTurn] = '~';
+			}		
+			game[i] = '\u26F5';
+			System.out.println("\n\n\n\n\n\n\n"+"------------------------------- \n"
+					+ " ☀" + "" + "\n\n" + Arrays.toString(game)
+					+ "\n | HP = " + health + "|| Repair level: "
+					+ repairLevel + "|\n");
+			System.out.println("\n You found a treasure chest! There is some repair toolkits inside!\n" +
+								"Use its to restore your HP!\n");
+			hpPicked = true;
+					}
+		i--;
+		return i;	
+		
+	}
+	
+
 public int setGo( int health, int i){
 	int repairLevel = 0; // 0 - нет аптечки, 1 - маленькая, 2 - большая
 	double hpTurn = 1 + Math.random() * 8; // Шаг на котором выпадает аптечка
@@ -154,7 +253,7 @@ public int setGo( int health, int i){
 			}
 		}
 	}
-	while (i < game.length-1);
+	while (i < game.length-1); 
 	return 0;
 	}
 public void setGameOver (String gameOver){

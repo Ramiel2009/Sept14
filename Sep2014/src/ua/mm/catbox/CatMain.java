@@ -33,9 +33,6 @@ public class CatMain {
 		bigbox.getInfo();*/
 		
 		CatBox catbox = new CatBox();
-		catbox.crazyM();
-		
+		catbox.crazyM();	
 	}
-
-
 }
