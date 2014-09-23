@@ -139,7 +139,9 @@ public class HomeWork3 {
 						System.out.println("To use small repair toolkit press '1' button!");
 				}		
 			}
-		} while (i < game.length - 1);
+			
+		}
+		 while (i < game.length - 1);
 		System.out.println("Game Over, Captain!");
 	}
 }
