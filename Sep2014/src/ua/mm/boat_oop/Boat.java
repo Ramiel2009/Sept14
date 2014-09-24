@@ -15,12 +15,8 @@ public class Boat {
 	int health;
 	char game[];
 
-	public void setBoat(){
-		
-	}
 	
-	
-	public int setMoving(){
+	/*public int setMoving(){
 		Scanner in1 = new Scanner(System.in);
 		String forward;
 		forward = in1.nextLine();
@@ -112,7 +108,7 @@ public class Boat {
 		i--;
 		return i;	
 		
-	}
+	}*/
 	
 
 public int setGo( int health, int i){

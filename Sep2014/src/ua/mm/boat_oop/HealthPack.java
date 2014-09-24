@@ -6,7 +6,7 @@ public class HealthPack {
 	int hpTurn;
 
 	public int setHPSize() {
-		//double HPx = (Math.random() + 1); // Выбор размера аптечки
+		HPx = (Math.random() + 1); // Выбор размера аптечки
 		if (HPx < 1.5) {
 			hp = 1;
 		} else if (HPx >= 1.5){
@@ -16,7 +16,9 @@ public class HealthPack {
 	}
 
 	public int setHPTurn() {
-		double hpTurn = 1 + Math.random() * 8; // Шаг на котором выпадает// аптечка
+		hpTurn = (int)(1 + Math.random() * 8); // Шаг на котором выпадает// аптечка
+		System.out.println(hpTurn);
 		return (int) hpTurn;
+		
 	}
 }

@@ -1,6 +1,5 @@
 package ua.mm.boat_oop;
 
-import java.util.Scanner;
 
 public class GameMain {
 	int hpTurn;
@@ -9,9 +8,7 @@ public class GameMain {
 
 	public static void main(String[] args) {
 
-		/*HealthPack hPack = new HealthPack();
-		hPack.hpTurn=(int) (1 + Math.random() * 8);
-		
+		/*HealthPack hPack = new HealthPack();		
 		
 		hPack.setHPTurn();
 		System.out.println(hPack.hpTurn);
@@ -28,7 +25,7 @@ public class GameMain {
 
 		
 		Boat boatik = new Boat();
-		boatik.setGo(10, 0);		
+		boatik.setGo(60, 0);		//HP on start(int), start position (int)
 		if (boatik.i == 0) {
 			boatik.setGameOver("FINISH");
 		}
