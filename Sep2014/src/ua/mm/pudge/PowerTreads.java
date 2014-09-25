@@ -8,7 +8,7 @@ public class PowerTreads {
 	int intel;
 	public int[] getPT(int type){ 
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Select PowerTreads type! 1 - strength, 2 - agility, 3 - intelligence");
+		System.out.println("Select Power Treads type! 1 - strength, 2 - agility, 3 - intelligence");
 		type = scanner.nextInt();
 		switch (type){	//1. str 2. agl 3. int
 		case 1:
@@ -27,7 +27,7 @@ public class PowerTreads {
 			intel = 8;
 			break;
 		}
-		System.out.println("\nPower Treads equiped");
+		System.out.println("------------------------------\nPower Treads was equiped");
 		int pt[] = {str, agl, intel};
 		return pt;
 	}

@@ -11,7 +11,7 @@ public class Circlet { //circlet of nobility
 		agl = 2;
 		intel = 2;
 		int [] circlet = {str, agl, intel};
-		System.out.println("\nCirclet of nobilty was equiped");
+		System.out.println("------------------------------\nCirclet of nobilty was equiped");
 		return circlet;
 	}
 }
