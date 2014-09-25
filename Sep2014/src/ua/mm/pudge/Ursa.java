@@ -2,11 +2,12 @@ package ua.mm.pudge;
 
 public class Ursa {
 
-	int str = 23;
-	int agl = 18;
-	int intel = 16;
+	int str = 23; 		int aStr = 0;
+	int agl = 18;		int aAgl = 0;
+	int intel = 16; 	int aIntel = 0;
 	int attack = 24;
-	int health = 288;
+	int health = 150;
+	int mana = 0;
 	int damage = 0;
 	
 	public void setSpawn() {
@@ -31,37 +32,51 @@ public class Ursa {
 		getAttInfo();
 	}
 	
-	public void setAttack() {
+	public void setStartAttack() {
 		attack += str;
 	}
-
-	public void setHealth() {
-		health += str * 13;
+	public void setAttack(){
+		attack += aStr;
+	}
+	
+	public void setStartHealth() {
+		health += str * 19;
+	}
+	public void setHealth(){
+		health += aStr * 19;
+	}
+	
+	public void setStartMana(){
+		mana += intel *13;
+	}
+	public void setMana(){
+		mana += aIntel *13;
 	}
 
 	public void setDamage() {
-		health = health - attack;
+		Pudge pudge = new Pudge();
+		pudge.health -= attack;
+		mana -= 30; 
 	}
-
 	public void setDeath() {
 		if (health <= 0)
 			System.out.println("Ursa has been killed");
 	}
-
 	public void setAttributes(int a[]) {
-		str += a[0];
-		agl += a[1];
-		intel += a[2];
+		aStr += a[0];
+		aAgl += a[1];
+		aIntel += a[2];
 		setAttack();
 		setHealth();
+		setMana();
 	}
 
 	void getAttInfo() {
-		System.out.println("\nAttributes: " + "Strength: " + str + "; Agility: "
-				+ agl + "; Intelligence: " + intel);
+		System.out.println("\nAttributes: " + "Strength: " + str + "+("+ aStr+ ")" + "; Agility: "
+				+ agl + "+("+ aAgl+ ")" + "; Intelligence: " + intel+ "+("+ aIntel+ ")");
 	}
 
 	void getMainInfo() {
-		System.out.println("Attack: " + attack + "; Health: " + health);
+		System.out.println("\nAttack: " + attack + "; Health: " + health + "; Mana: " + mana);
 	}
 }
