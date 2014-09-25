@@ -8,7 +8,7 @@ public class Color {
 
 	public int setColor(){
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("\nSelect color ID from the table below : \n--------------------------  " +
+		System.out.println("\nSelect color ID from the table below : \n--------------------------" +
 				"\n|	0 - Random       |"+
 				"\n| 1 - White  | 2 - Black |\n| 3 - Brown  | 4 - Green |" +
 				"\n| 5 - Yellow | 6 - Grey  |\n| 7 - Red    | 8 - Blue  |\n| 9 - Orange | 10 - Pink |" +
