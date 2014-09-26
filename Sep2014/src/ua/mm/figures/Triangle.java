@@ -33,6 +33,6 @@ public class Triangle {
 	}
 	public void getInfo(){
 		System.out.println("TRIANGLE INFO:\n" +
-				"1st side length: "+length1+"; 2nd side length: "+length2+"; 3rd side length: " +length3+ ";\nArea: "+area+"; Perimeter: "+perimeter+";");
+				"1st side length = "+length1+"; 2nd side length = "+length2+"; 3rd side length = " +length3+ ";\nArea = "+area+"(²)"+"; Perimeter = "+perimeter+";");
 	}
 }

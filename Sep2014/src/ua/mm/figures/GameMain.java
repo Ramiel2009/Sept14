@@ -28,11 +28,13 @@ public class GameMain {
 		case 2:
 			Square square = new Square();
 			square.setSquare();
+			square.getInfo();
 			break;
 	
 		case 3: 
 			Circle circle = new Circle();
 			circle.setCircle();
+			circle.getInfo();
 			break;
 		}
 	}
