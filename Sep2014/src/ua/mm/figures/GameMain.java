@@ -14,7 +14,7 @@ public class GameMain {
 	public static void main(String[] args) {
 		int figureId;
 		System.out.println("Select your figure:\n" +
-				"1 - Triangle; 2 - Squere; 3 - Circle;");
+				"1 - Triangle; 2 - Square; 3 - Circle;");
 		Scanner scanner = new Scanner(System.in);
 		figureId = scanner.nextInt();
 		switch (figureId) {
