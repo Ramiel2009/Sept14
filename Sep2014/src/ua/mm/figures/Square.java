@@ -3,11 +3,11 @@ package ua.mm.figures;
 import java.util.Scanner;
 
 public class Square {
-	int length;	
-	int area;
-	int perimeter;
+	static int length;	
+	static int area;
+	static int perimeter;
 	
-	public void setSquare(){
+	public static void setSquare(){
 		Color colorId = new Color();
 		String[] color = { "White", "Black", "Brown", "Green", "Yellow",
 				"Grey", "Red", "Blue", "Orange", "Pink" };
@@ -19,7 +19,7 @@ public class Square {
 		perimeter = length*4;
 	}
 	
-	public void getInfo(){
+	public static void getInfo(){
 		System.out.println("SQUARE INFO: \n" +
 				"Sides length = "+length+"; Area = "+area+"(²)"+"; Perrimeter = "+perimeter);
 	}

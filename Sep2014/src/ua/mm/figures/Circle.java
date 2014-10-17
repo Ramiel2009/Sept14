@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Circle {
 	
-	int radius;
-	int length;
-	int area;
+	static int radius;
+	static int length;
+	static int area;
 	
 	public void setCircle() {
 		Color colorId = new Color();

@@ -3,16 +3,16 @@ package ua.mm.figures;
 import java.util.Scanner;
 
 public class Triangle {
-	int length1;
-	int length2;
-	int length3;
-	double angle;
-	int area;
-	int perimeter;
-	int colorId;
-	String color;
+	static double length1;
+	static double length2;
+	static double length3;
+	static double angle;
+	static double area;
+	static double perimeter;
+	static int colorId;
+	static String color;
 
-	public void setTriangle() {
+	public static void setTriangle() {
 		Color colorId = new Color();
 		String[] color = { "White", "Black", "Brown", "Green", "Yellow",
 				"Grey", "Red", "Blue", "Orange", "Pink" };
@@ -26,12 +26,11 @@ public class Triangle {
 		angle = scanner.nextInt();
 		area = (int) ((length1 * length2 * Math.sin(angle)) / 2);
 		//System.out.println("\nThe area of your triangle is: " + area);
-		length3 = (int) Math.sqrt((Math.pow(length1, 2)
+		length3 =  Math.sqrt((Math.pow(length1, 2)
 				+ (Math.pow(length2, 2)) - 2 * (length1 * length2 * Math.cos(Math.toRadians(angle)))));
 		perimeter = length1 + length2 + length3;
-		
 	}
-	public void getInfo(){
+	public static void getInfo(){
 		System.out.println("TRIANGLE INFO:\n" +
 				"1st side length = "+length1+"; 2nd side length = "+length2+"; 3rd side length = " +length3+ ";\nArea = "+area+"(²)"+"; Perimeter = "+perimeter+";");
 	}
